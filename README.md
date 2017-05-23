@@ -1,7 +1,10 @@
 # 简介
 该项目可以生成mybatis所需要的pojo、Mapper接口、xxxMapper.xml
 # 如何使用
-1. 编辑`generatorConfig.xml`，修改数据库连接信息
+
+1. 将该项目导入到eclipse或者IDEA中
+
+2. 编辑`generatorConfig.xml`，修改数据库连接信息
 
 ```
 <jdbcConnection 
@@ -11,7 +14,7 @@
 	password="root">
 </jdbcConnection>
 ```
-2. 修改pojo、xxxMapper.xml、Mapper接口的生成路径
+3. 修改pojo、xxxMapper.xml、Mapper接口的生成路径
 
 ```
 <!-- targetProject:生成Entity类的路径 -->
@@ -34,9 +37,9 @@
   <property name="enableSubPackages" value="false" />
 </javaClientGenerator>
 ```
-3. 指定数据库表名以及我们要生成的pojo的实体类名
+4. 指定数据库表名以及我们要生成的pojo的实体类名
 
 ```
 <table tableName="fulfillment_in_warehouse" domainObjectName="FulfillmentInWarehouse"/>
 ```
-4. 执行`Mbg_GeneratorUtil.java`，刷新src目录，就可以看见生成的文件，将这些文件拷贝到你的项目中即可
+5. 执行`Mbg_GeneratorUtil.java`，刷新src目录，就可以看见生成的文件，将这些文件拷贝到你的项目中即可
