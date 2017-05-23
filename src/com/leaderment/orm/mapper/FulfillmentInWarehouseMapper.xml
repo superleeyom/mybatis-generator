@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.leaderment.orm.mapper.FulfillmentInWarehouseMapper" >
+  <resultMap id="BaseResultMap" type="com.leaderment.orm.pojo.FulfillmentInWarehouse" >
+    <id column="in_warehouse_id" property="inWarehouseId" jdbcType="INTEGER" />
+    <result column="shipment_date" property="shipmentDate" jdbcType="DATE" />
+    <result column="in_warehouse_number" property="inWarehouseNumber" jdbcType="INTEGER" />
+    <result column="supplier_order_item_id" property="supplierOrderItemId" jdbcType="INTEGER" />
+    <result column="shipment_no" property="shipmentNo" jdbcType="VARCHAR" />
+    <result column="invoice_no" property="invoiceNo" jdbcType="VARCHAR" />
+    <result column="memo_money" property="memoMoney" jdbcType="DOUBLE" />
+    <result column="in_warehouse_date" property="inWarehouseDate" jdbcType="DATE" />
+    <result column="purchase_price" property="purchasePrice" jdbcType="DOUBLE" />
+    <result column="currency_type" property="currencyType" jdbcType="INTEGER" />
+    <result column="payment_date" property="paymentDate" jdbcType="DATE" />
+    <result column="supplier_id" property="supplierId" jdbcType="INTEGER" />
+    <result column="inventory_region_id" property="inventoryRegionId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from fulfillment_in_warehouse
+    where in_warehouse_id = #{inWarehouseId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.leaderment.orm.pojo.FulfillmentInWarehouse" >
+    insert into fulfillment_in_warehouse (in_warehouse_id, shipment_date, in_warehouse_number, 
+      supplier_order_item_id, shipment_no, invoice_no, 
+      memo_money, in_warehouse_date, purchase_price, 
+      currency_type, payment_date, supplier_id, 
+      inventory_region_id, status)
+    values (#{inWarehouseId,jdbcType=INTEGER}, #{shipmentDate,jdbcType=DATE}, #{inWarehouseNumber,jdbcType=INTEGER}, 
+      #{supplierOrderItemId,jdbcType=INTEGER}, #{shipmentNo,jdbcType=VARCHAR}, #{invoiceNo,jdbcType=VARCHAR}, 
+      #{memoMoney,jdbcType=DOUBLE}, #{inWarehouseDate,jdbcType=DATE}, #{purchasePrice,jdbcType=DOUBLE}, 
+      #{currencyType,jdbcType=INTEGER}, #{paymentDate,jdbcType=DATE}, #{supplierId,jdbcType=INTEGER}, 
+      #{inventoryRegionId,jdbcType=INTEGER}, #{status,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.leaderment.orm.pojo.FulfillmentInWarehouse" >
+    update fulfillment_in_warehouse
+    set shipment_date = #{shipmentDate,jdbcType=DATE},
+      in_warehouse_number = #{inWarehouseNumber,jdbcType=INTEGER},
+      supplier_order_item_id = #{supplierOrderItemId,jdbcType=INTEGER},
+      shipment_no = #{shipmentNo,jdbcType=VARCHAR},
+      invoice_no = #{invoiceNo,jdbcType=VARCHAR},
+      memo_money = #{memoMoney,jdbcType=DOUBLE},
+      in_warehouse_date = #{inWarehouseDate,jdbcType=DATE},
+      purchase_price = #{purchasePrice,jdbcType=DOUBLE},
+      currency_type = #{currencyType,jdbcType=INTEGER},
+      payment_date = #{paymentDate,jdbcType=DATE},
+      supplier_id = #{supplierId,jdbcType=INTEGER},
+      inventory_region_id = #{inventoryRegionId,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER}
+    where in_warehouse_id = #{inWarehouseId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select in_warehouse_id, shipment_date, in_warehouse_number, supplier_order_item_id, 
+    shipment_no, invoice_no, memo_money, in_warehouse_date, purchase_price, currency_type, 
+    payment_date, supplier_id, inventory_region_id, status
+    from fulfillment_in_warehouse
+    where in_warehouse_id = #{inWarehouseId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select in_warehouse_id, shipment_date, in_warehouse_number, supplier_order_item_id, 
+    shipment_no, invoice_no, memo_money, in_warehouse_date, purchase_price, currency_type, 
+    payment_date, supplier_id, inventory_region_id, status
+    from fulfillment_in_warehouse
+  </select>
+</mapper>
