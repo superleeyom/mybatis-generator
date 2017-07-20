@@ -1,4 +1,4 @@
-package com.leaderment.mybatis.mbg;
+package com.leeyom.mybatis.mbg;
 
 import java.io.File;
 import java.util.ArrayList;

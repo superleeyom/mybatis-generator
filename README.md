@@ -40,7 +40,7 @@
 4. 指定数据库表名以及我们要生成的pojo的实体类名
 
 ```
-<table tableName="fulfillment_in_warehouse" domainObjectName="FulfillmentInWarehouse"/>
+<table tableName="user" domainObjectName="User"/>
 ```
 5. 执行`Mbg_GeneratorUtil.java`，刷新src目录，就可以看见生成的文件，将这些文件拷贝到你的项目中即可
 
