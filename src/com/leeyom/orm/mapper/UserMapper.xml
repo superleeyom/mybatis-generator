@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.leeyom.orm.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.leeyom.orm.pojo.User" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="sign" property="sign" jdbcType="VARCHAR" />
+    <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+    <result column="initPanelId" property="initpanelid" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.leeyom.orm.pojo.User" >
+    insert into user (id, name, status, 
+      sign, avatar, initPanelId
+      )
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{sign,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{initpanelid,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.leeyom.orm.pojo.User" >
+    update user
+    set name = #{name,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      sign = #{sign,jdbcType=VARCHAR},
+      avatar = #{avatar,jdbcType=VARCHAR},
+      initPanelId = #{initpanelid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select id, name, status, sign, avatar, initPanelId
+    from user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, name, status, sign, avatar, initPanelId
+    from user
+  </select>
+</mapper>
