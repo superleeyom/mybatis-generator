@@ -10,7 +10,9 @@
 
         <!-- 有Example查询条件内容,拓展版
        <context id="testTables" targetRuntime="MyBatis3"> -->
-
+        
+        <!--生成的实体bean重写toString方法-->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
 
         <!-- ########################################## -->
 
@@ -53,7 +55,11 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <!-- 数据库表名字和我们的entity类对应的映射指定 -->
+        <!-- 数据库表名字和我们的entity类对应的映射指定，这种insert后不会返回主键id -->
         <table tableName="user" domainObjectName="User"/>
+        <!-- insert插入时返回数据库自增长主键id -->    
+        <table tableName="case" domainObjectName="Case">  
+                <generatedKey column="case_id" sqlStatement="MySql" identity="true" />  
+        </table> 
     </context>
 </generatorConfiguration>
