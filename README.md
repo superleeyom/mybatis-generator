@@ -1,3 +1,12 @@
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/devTool-Eclipse%7CIDEA-yellow.svg" alt=""></a>
+  <a href="#"><img src="https://travis-ci.org/Alamofire/Alamofire.svg?branch=master" alt=""></a>
+  <a href="#"><img src="https://img.shields.io/packagist/l/doctrine/orm.svg" alt="LICENSE"></a>
+  <a href="#"><img src="https://img.shields.io/badge/platform-OSX%7CWin%7CLinux-blue.svg" alt=""></a>
+  <a href="#"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" alt=""></a>   	
+  <a href="#"><img src="https://img.shields.io/badge/language-java-blue.svg" alt=""></a>  
+</p>
+
 # 简介
 该项目可以生成mybatis所需要的pojo、Mapper接口、xxxMapper.xml
 # 如何使用
