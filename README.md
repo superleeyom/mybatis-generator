@@ -67,4 +67,4 @@
 
 # 推荐项目
 
-最近发现一个更加好的mybatis generator项目-[mybatis-generator-gui](https://github.com/zouzg/mybatis-generator-gui)，带有图形化界面，非常方便！
+最近发现一个更加好的mybatis generator项目：[mybatis-generator-gui](https://github.com/zouzg/mybatis-generator-gui)，带有图形化界面，非常方便！
