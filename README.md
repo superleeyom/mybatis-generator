@@ -51,6 +51,14 @@
 ```
 <table tableName="user" domainObjectName="User"/>
 ```
+
+如果需要insert的时候返回主键，需要如下配置：
+```xml
+<!-- insert插入时返回数据库自增长主键id -->    
+<table tableName="case" domainObjectName="Case">  
+	<generatedKey column="case_id" sqlStatement="MySql" identity="true" />  
+</table> 
+```
 5. 执行`MybatisGenerator.java`，刷新src目录，就可以看见生成的文件，将这些文件拷贝到你的项目中即可
 
 # 注意
