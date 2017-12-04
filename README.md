@@ -64,3 +64,7 @@
 # 注意
 * 对于数据库中的表字段，尽量采用下划线分隔的形式，比如"user_name"，这样生成的pojo的属性才符合标准的驼峰命名法。
 * 如果是mac或者linux环境下，需要将`targetProject=".\src"`中的"\\"换成"/"即可，否则无法生成对应的文件。
+
+# 推荐项目
+
+最近发现一个更加好的mybatis generator项目-[mybatis-generator-gui](https://github.com/zouzg/mybatis-generator-gui)，带有图形化界面，非常方便！
